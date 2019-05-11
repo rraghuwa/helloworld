@@ -1,8 +1,7 @@
 ---
-- name: Hello World
-  hosts: all
+- hosts: all
   tasks:
-
-    - name: Display message
-      debug:
-        msg: "Hello World"
+  - name: Populate motd
+    copy:
+      content: 'Hello World!'
+      dest: /etc/motd
